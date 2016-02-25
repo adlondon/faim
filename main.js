@@ -8,21 +8,32 @@ var templates = {
        "</div>"
   ].join("")
 }
-
+$(document).ready(function() {
+  faim.init();
+});
 var faim = {
   url: 'http://tiny-tiny.herokuapp.com/collections/faim',
-  init: function () {
+  init: function() {
     faim.initEvents();
     faim.initStyling();
   },
 
   initEvents: function () {
-  $('form').on('submit', faim.submitPost);
-  $('section').on('click', '.delete', faim.deletePostFromDom);
-},
+    $('form').on('submit', function(event) {
+      event.preventDefault();
+      faim.submitMessage();
+    });
+    $('section').on('click', '.delete', faim.deletePostFromDom);
+  },
 
-submitMessage: function (event) {
-  event.preventDefault();
+  addMessage: function(newMessage) {
+    faim.push(newMessage)
+  },
+  initStyling() {
+    faim.addAllMessagesToDom();
+  },
+
+submitMessage: function () {
   var   newMessage = faim.getMessageFromDom();
   console.log(newMessage);
     faim.addMessage(newMessage);
