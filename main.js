@@ -1,59 +1,69 @@
-
 var templates = {
-  message: [
-    "<div data-postid='<%= _id %>'>",
-       "<p> <%=userName%> <%= content %> </p>",
-      "<input type='text' name='editContent' value='<%= content %>'>",
-       "<button class='submitEdit'>Submit Edit</button>",
+  messages: [
+    "<div>",
+       "<%= content %>",
+      "<input type='button' name='delete' value='delete!'>",
        "</div>"
   ].join("")
 }
-$(document).ready(function() {
-  faim.init();
+
+
+var messageData = [
+{
+  content: "hello",
+  userName: "andrew"
+ }
+]
+
+$(document).ready(function () {
+  page.init();
 });
-var faim = {
-  url: 'http://tiny-tiny.herokuapp.com/collections/faim',
+
+var page = {
+  // url: 'http://tiny-tiny.herokuapp.com/collections/faim',
   init: function() {
-    faim.initEvents();
-    faim.initStyling();
+
+    page.initStyling();
+    page.initEvents();
+  },
+  initStyling: function() {
+    page.addAllMessages(messageData, $('.messageArea'));
+
+  },
+  initEvents: function() {
+    $('form').on('submit', page.submitForm);
   },
 
-  initEvents: function () {
-    $('form').on('submit', function(event) {
-      event.preventDefault();
-      faim.submitMessage();
+  getMessageData: function () {
+    return messageData;
+  },
+  addMessageData: function (newMessage) {
+    messageData.push(newMessage)
+  },
+  addMessageToDom: function (dataArray, templateString, $target) {
+    console.log("this is data array", dataArray)
+    var tmpl = _.template(templateString);
+    $target.append(tmpl(dataArray));
+
+  },
+  addAllMessages: function (arr,$target) {
+    $target.html("");
+    _.each(arr, function (el) {
+      page.addMessageToDom(el,templates.messages,$target);
     });
-    $('section').on('click', '.delete', faim.deletePostFromDom);
   },
-
-  addMessage: function(newMessage) {
-    faim.push(newMessage)
+  getMessageFromDom: function (messageText) {
+    return {
+      content: messageText,
+    };
   },
-  initStyling() {
-    faim.addAllMessagesToDom();
-  },
-
-submitMessage: function () {
-  var   newMessage = faim.getMessageFromDom();
-  console.log(newMessage);
-    faim.addMessage(newMessage);
-
-    $('input').val('');
-},
-getMessageFromDom: function getMessageFromDom() {
-  var content = $('input[name="content"]').val();
-  return {
-    content: content
+  submitForm: function (el) {
+    el.preventDefault();
+    var textInput = $('.textBox').val();
+    var newMessage = page.getMessageFromDom(textInput);
+    page.addMessageData(newMessage);
+    $('.textBox').val('');
+    console.log(messageData);
+    page.addAllMessages(messageData, $('.messageArea'));
   }
-},
-addAllMessagesToDom: function(event){
-  $('.messageArea').html('');
-  _.each(event, function(element){
-    var tmpl = _.template(templates.message);
-    $(".messageArea").append(tmpl(element));
-  })
-},
-getMessages: function getMessages(){
-  return faim;
-}
 }
