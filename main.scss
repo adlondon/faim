@@ -8,38 +8,25 @@ body {
   border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
-  color: grey;
-  text-align: center;
+  word-wrap: break-word;
+  box-shadow: 0 0 0 3px #ffffff inset;
+  padding-top: 7px;
+  padding-left: 4px;
+  // maybe here
+}
+
+
+
+
+.message{
+  width: 80%;
+  margin-left: 8%;
+  padding-bottom: 2%;
+  background-color: #ffffff;
+  font-size: 20px;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
   display: inline-block;
-  padding-top: 7px;
-}
-
-
-
-
-.userNameDisplay{
-width:15%;
-border: 2px dotted #c90083;
-border-radius: 7px;
-margin-left: 40%;
-margin-top: 3%;
-
-}
-
-.message{
-  width: 90%;
-  margin-left: 4%;
-  // margin-top: 2%;
-  padding-bottom: 2%;
-  // border-radius: 7px;
-  background-color: #ffffff;
-  font-size: 20px;
-  color: grey;
-  text-align: center;
-  word-wrap: break-word;
-  box-shadow: 0 0 0 3px #ffffff inset;
 
 
 }
@@ -53,17 +40,33 @@ h1 {
   margin-left: 9%;
   text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
-// div{
-//   display:inline-block;
-// }
+
 
 i {
   padding-right: 2%;
   color: #c90083; }
 
+
+
+.delete{
+  width:10%;
+  float: right;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.eachMessage{
+  display:inline-block;
+  width:100%;
+  border-top: 2px dotted #057099;
+  // height: 10px;
+
+
+}
+
+// this is fine
 .textBox {
   width: 60%;
-  // height: 50px;
   margin-left: 20%;
   font-size: 30px;
   margin-top: 3%;
@@ -73,6 +76,7 @@ i {
   box-shadow: 0 0 0 3px #6cd69d inset;
   border-radius: 7px; }
 
+// this is fine
 .submit {
   width: 15%;
   font-size: 20px;
@@ -85,6 +89,8 @@ i {
   border-radius: 5px;
   text-align: center; }
 
+
+// this is fine
 .inputArea {
   width: 70%;
   margin-left: 14%;
@@ -93,19 +99,18 @@ i {
   border: 4px #c90083 solid;
   border-radius: 12px;
   box-shadow: 0 0 0 3px #ffffff inset;
+  // height: 400px;
+  // overflow: scroll;
+  // maybe here
 }
 
-.delete{
-  width:10%;
-  float: right;
-  margin-top: -40px;
 
-
+// scroll thingy
+.messageArea {
+  height: 300px;
+  overflow: scroll;
 }
 
-.eachMessage{
-  display:inline-block;
-  width:100%;
-  border-bottom: 2px dotted #057099;
-
+p{
+  color:#6cd69d;
 }

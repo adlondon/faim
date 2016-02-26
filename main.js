@@ -4,12 +4,11 @@
 var templates = {
   messages: [
 
-    "<div data-postid='<%= _id %>'",
+    "<div class= 'eachMessage' data-postid='<%= _id %>'",
 
-      "<div class='userNameDisplay'><%= userName %></div>",
-       "<div class= 'message'> <%= content %> </div>",
+      "<p class='userNameDisplay'><%= userName %></p>",
+       "<p class= 'message'> <%= content %> </p>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
-       "</div>",
     "</div>"
   ].join("")
 };
@@ -29,7 +28,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("autosave")) {
     field.value = sessionStorage.getItem("autosave");
   };
-  setInterval(function(){page.getMessageData()}, 1000);
+  // setInterval(function(){page.getMessageData()}, 1000);
 
 });
 
