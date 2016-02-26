@@ -2,8 +2,8 @@ body {
   background-color: #057099; }
 
 .messageArea {
-  width: 90%;
-  margin-left: 4%;
+  width: 70%;
+  margin-left: 15%;
   margin-top: 3%;
   border-radius: 7px;
   background-color: #ffffff;
@@ -18,26 +18,30 @@ body {
 
 
 
+
 .userNameDisplay{
 width:15%;
-border: 2px dotted #057099;
+border: 2px dotted #c90083;
 border-radius: 7px;
-margin-left: 1%;
+margin-left: 40%;
+margin-top: 3%;
+
 }
 
-.message div {
-  width: 80%;
+.message{
+  width: 90%;
   margin-left: 4%;
-  margin-top: 3%;
-  border-radius: 7px;
+  // margin-top: 2%;
+  padding-bottom: 2%;
+  // border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
   color: grey;
   text-align: center;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
-  border: 2px dotted #057099;
-  display: block;
+
+
 }
 
 h1 {
@@ -92,6 +96,16 @@ i {
 }
 
 .delete{
+  width:10%;
   float: right;
-  margin-top: 4px;
+  margin-top: -40px;
+
+
+}
+
+.eachMessage{
+  display:inline-block;
+  width:100%;
+  border-bottom: 2px dotted #057099;
+
 }
