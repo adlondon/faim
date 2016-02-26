@@ -1,7 +1,7 @@
 body {
   background-color: #057099; }
 
-.messageArea div {
+.messageArea {
   width: 90%;
   margin-left: 4%;
   margin-top: 3%;
@@ -12,10 +12,21 @@ body {
   text-align: center;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
+  display: inline-block;
+  padding-top: 7px;
+}
+
+
+
+.userNameDisplay{
+width:15%;
+border: 2px dotted #057099;
+border-radius: 7px;
+margin-left: 1%;
 }
 
 .message div {
-  width: 90%;
+  width: 80%;
   margin-left: 4%;
   margin-top: 3%;
   border-radius: 7px;
@@ -25,6 +36,7 @@ body {
   text-align: center;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
+  border: 2px dotted #057099;
 }
 
 h1 {
