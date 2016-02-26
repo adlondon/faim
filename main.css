@@ -1,13 +1,25 @@
 body {
   background-color: #057099; }
 
+.messageArea div {
+  width: 90%;
+  height: 33px;
+  margin-left: 4%;
+  margin-top: 3%;
+  border-radius: 7px;
+  background-color: #ffffff;
+  font-size: 20px;
+  color: grey;
+  text-align: center; }
+
 h1 {
   color: #057099;
-  padding-left: 22%;
-  font-size: 35px;
+  padding-left: 15%;
+  font-size: 45px;
   margin-bottom: 0%;
   margin-top: 10%;
-  margin-left: 9%; }
+  margin-left: 9%;
+  text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
 i {
   padding-right: 2%;
@@ -21,7 +33,8 @@ i {
   margin-top: 3%;
   background-color: #ffffff;
   color: #c90083;
-  border: 3px #c90083 solid;
+  border: 3px #c90083 dashed;
+  box-shadow: 0 0 0 3px #71a71b inset;
   border-radius: 7px; }
 
 .submit {
@@ -29,17 +42,17 @@ i {
   font-size: 20px;
   margin-left: 43%;
   margin-top: 1%;
-  color: #c90083;
+  margin-bottom: 10%;
+  color: grey;
   background-color: #ffffff;
   border: 2px #c90083 solid;
   border-radius: 5px;
   text-align: center; }
 
-.messageArea {
+.inputArea {
   width: 70%;
   margin-left: 14%;
   margin-top: 5%;
-  height: 500px;
   background-color: #71a71b;
   border: 4px #c90083 solid;
   border-radius: 12px; }
