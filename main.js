@@ -8,7 +8,9 @@ var templates = {
 
       "<p class='userNameDisplay'><%= userName %></p>",
        "<p class= 'message'> <%= content %> </p>",
+       "<% if (obj.userName === userNameInput) {%>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
+      "<% } %>",
     "</div>"
   ].join("")
 };
