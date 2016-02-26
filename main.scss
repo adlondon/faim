@@ -37,6 +37,7 @@ margin-left: 1%;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
   border: 2px dotted #057099;
+  display: block;
 }
 
 h1 {
@@ -48,13 +49,17 @@ h1 {
   margin-left: 9%;
   text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
+// div{
+//   display:inline-block;
+// }
+
 i {
   padding-right: 2%;
   color: #c90083; }
 
 .textBox {
   width: 60%;
-  height: 50px;
+  // height: 50px;
   margin-left: 20%;
   font-size: 30px;
   margin-top: 3%;
