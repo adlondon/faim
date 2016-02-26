@@ -30,7 +30,7 @@ $(document).ready(function () {
 });
 
 var page = {
-  url: 'http://tiny-tiny.herokuapp.com/collections/faim',
+  url: 'http://tiny-tiny.herokuapp.com/collections/faims',
   init: function() {
 
     page.initStyling();
@@ -45,7 +45,14 @@ var page = {
   },
 
   getMessageData: function () {
-    return messageData;
+    $.ajax({
+      url: page.url,
+      method: "GET",
+      success: function (response) {
+        console.log("RESPONSE FROM TINTINY ADD MESSAGE", response);
+        page.addAllMessages(response,$('.messageArea'))
+      }
+    })
   },
   addMessageData: function (newMessage) {
     $.ajax({
@@ -54,23 +61,17 @@ var page = {
       data: newMessage,
       success: function (response) {
           console.log(response);
-          page.addMessageToDom(response, templates.messages, $('.messageArea'))
+          page.getMessageData();
       }
     })
-
-
-
-
     // messageData.push(newMessage)
   },
   addMessageToDom: function (dataArrayObject, templateString, $target) {
-    console.log("this is data array object", dataArrayObject)
-    var tmpl = _.template(templateString);
-    $target.append(tmpl(dataArrayObject));
-
+      var tmpl = _.template(templateString);
+      $target.append(tmpl(dataArrayObject));
   },
   addAllMessages: function (arr,$target) {
-    $target.htmlf
+    $target.html('');
     _.each(arr, function (el) {
       page.addMessageToDom(el,templates.messages,$target);
     });
