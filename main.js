@@ -4,7 +4,7 @@
 var templates = {
   messages: [
       "<div class='userNameDisplay'><%= userName %></div>",
-       "<%= content %>",
+       "<div class= 'message'> <%= content %> </div>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
        "</div>"
 
