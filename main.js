@@ -4,11 +4,13 @@
 var templates = {
   messages: [
 
+    "<div data-postid='<%= _id %>'",
+
       "<div class='userNameDisplay'><%= userName %></div>",
        "<div class= 'message'> <%= content %> </div>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
-       "</div>"
-
+       "</div>",
+    "</div>"
   ].join("")
 };
 
@@ -16,10 +18,10 @@ var userNameInput = prompt("Enter Username");
 sessionStorage.setItem('userName', userNameInput);
 
 var messageData = [
-{
-  content: "hello",
-  userName: "elizabeth"
- }
+// {
+//   content: "hello",
+//   userName: "elizabeth"
+//  }
 ]
 
 $(document).ready(function () {
@@ -44,7 +46,9 @@ var page = {
   },
   initEvents: function() {
     $('form').on('submit', page.submitForm);
+    $('.delete').on('click', page.deletePostFromDom)
   },
+
 
   getMessageData: function () {
     $.ajax({
@@ -66,8 +70,21 @@ var page = {
           page.getMessageData();
       }
     })
-    // messageData.push(newMessage)
   },
+  deletePost: function (postId) {
+   $.ajax({
+     url: page.url + '/' + postId,
+     method: 'DELETE',
+     success: function (response) {
+       page.getMessageData();
+     }
+   });
+ },
+ deletePostFromDom: function (event) {
+  var postId = $(this).closest('div').data('postid');
+  page.deletePost(postId);
+},
+
   addMessageToDom: function (dataArrayObject, templateString, $target) {
       var tmpl = _.template(templateString);
       $target.append(tmpl(dataArrayObject));
