@@ -1,22 +1,18 @@
 body {
   background-color: #057099; }
 
-.messageArea div{
+.messageArea div {
   width: 90%;
-  height:33px;
   margin-left: 4%;
   margin-top: 3%;
-  // border: #c90083 5px solid;
-  // box-shadow: 0 0 0 3px #71a71b inset;
   border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
-  color:grey;
+  color: grey;
   text-align: center;
   word-wrap: break-word;
+  box-shadow: 0 0 0 3px #ffffff inset;
 }
-
-
 
 h1 {
   color: #057099;
@@ -25,10 +21,7 @@ h1 {
   margin-bottom: 0%;
   margin-top: 10%;
   margin-left: 9%;
-  text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff;
-
-  }
-
+  text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
 i {
   padding-right: 2%;
@@ -44,8 +37,7 @@ i {
   color: #c90083;
   border: 3px #c90083 dashed;
   box-shadow: 0 0 0 3px #6cd69d inset;
-  border-radius: 7px;
-}
+  border-radius: 7px; }
 
 .submit {
   width: 15%;
@@ -57,15 +49,19 @@ i {
   background-color: #ffffff;
   border: 2px #c90083 solid;
   border-radius: 5px;
-  text-align: center;
-
-}
+  text-align: center; }
 
 .inputArea {
   width: 70%;
   margin-left: 14%;
   margin-top: 5%;
-  // height: 600%;
   background-color: #6cd69d;
   border: 4px #c90083 solid;
-  border-radius: 12px; }
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px #ffffff inset;
+}
+
+.delete{
+  float: right;
+  margin-top: 3px;
+}

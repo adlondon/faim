@@ -2,7 +2,7 @@ var templates = {
   messages: [
     "<div>",
        "<%= content %>",
-      "<input type='button' name='delete' value='delete!'>",
+      "<input type='button' name='delete' value='delete!' class = 'delete'>",
        "</div>"
   ].join("")
 }

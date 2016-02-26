@@ -3,7 +3,6 @@ body {
 
 .messageArea div {
   width: 90%;
-  height: 33px;
   margin-left: 4%;
   margin-top: 3%;
   border-radius: 7px;
@@ -12,7 +11,7 @@ body {
   color: grey;
   text-align: center;
   word-wrap: break-word;
-}
+  box-shadow: 0 0 0 3px #ffffff inset; }
 
 h1 {
   color: #057099;
@@ -57,4 +56,9 @@ i {
   margin-top: 5%;
   background-color: #6cd69d;
   border: 4px #c90083 solid;
-  border-radius: 12px; }
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px #ffffff inset; }
+
+.delete {
+  float: right;
+  margin-top: 3px; }
