@@ -2,38 +2,26 @@ body {
   background-color: #057099; }
 
 .messageArea {
-  width: 90%;
-  margin-left: 4%;
+  width: 70%;
+  margin-left: 15%;
   margin-top: 3%;
   border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
-  color: grey;
-  text-align: center;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
-  display: inline-block;
-  padding-top: 7px; }
+  padding-top: 7px;
+  padding-left: 4px; }
 
-.userNameDisplay {
-  width: 15%;
-  border: 2px dotted #057099;
-  border-radius: 7px;
-  margin-left: 1%; }
-
-.message div {
+.message {
   width: 80%;
-  margin-left: 4%;
-  margin-top: 3%;
-  border-radius: 7px;
+  margin-left: 8%;
+  padding-bottom: 2%;
   background-color: #ffffff;
   font-size: 20px;
-  color: grey;
-  text-align: center;
   word-wrap: break-word;
   box-shadow: 0 0 0 3px #ffffff inset;
-  border: 2px dotted #057099;
-  display: block; }
+  display: inline-block; }
 
 h1 {
   color: #057099;
@@ -47,6 +35,17 @@ h1 {
 i {
   padding-right: 2%;
   color: #c90083; }
+
+.delete {
+  width: 10%;
+  float: right;
+  margin-top: 4px;
+  display: inline-block; }
+
+.eachMessage {
+  display: inline-block;
+  width: 100%;
+  border-top: 2px dotted #057099; }
 
 .textBox {
   width: 60%;
@@ -80,6 +79,9 @@ i {
   border-radius: 12px;
   box-shadow: 0 0 0 3px #ffffff inset; }
 
-.delete {
-  float: right;
-  margin-top: 4px; }
+.messageArea {
+  height: 300px;
+  overflow: scroll; }
+
+p {
+  color: #6cd69d; }

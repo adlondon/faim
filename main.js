@@ -3,15 +3,17 @@
 
 var templates = {
   messages: [
-    "<div data-postid='<%= _id %>'>",
-      "<div class='userNameDisplay'><%= userName %></div>",
-       "<div class= 'message'> <%= content %> </div>",
+    "<div class= 'eachMessage' data-postid='<%= _id %>'",
+      "<p class='userNameDisplay'><%= userName %></p>",
+        "<p class= 'message'> <%= content %> </p>",
        "<% if (obj.userName === userNameInput) {%>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
       "<% } %>",
     "</div>"
   ].join("")
 };
+
+
 
 var userNameInput = prompt("Enter Username");
 sessionStorage.setItem('userName', userNameInput);
