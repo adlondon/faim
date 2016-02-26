@@ -3,11 +3,11 @@
 
 var templates = {
   messages: [
-     "<div class='messagePost'>",
       "<div class='userNameDisplay'><%= userName %></div>",
        "<%= content %>",
-      "<input class='deletePost' type='button' value='delete''>",
-     "</div>"
+      "<input type='button' name='delete' value='delete!' class = 'delete'>",
+       "</div>"
+
   ].join("")
 };
 

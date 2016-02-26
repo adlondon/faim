@@ -1,18 +1,32 @@
 body {
   background-color: #057099; }
 
+.messageArea div {
+  width: 90%;
+  margin-left: 4%;
+  margin-top: 3%;
+  border-radius: 7px;
+  background-color: #ffffff;
+  font-size: 20px;
+  color: grey;
+  text-align: center;
+  word-wrap: break-word;
+  box-shadow: 0 0 0 3px #ffffff inset; }
+
 h1 {
   color: #057099;
-  padding-left: 22%;
-  font-size: 35px;
+  padding-left: 15%;
+  font-size: 45px;
   margin-bottom: 0%;
-  margin-top: 10%; }
+  margin-top: 10%;
+  margin-left: 9%;
+  text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
 i {
   padding-right: 2%;
   color: #c90083; }
 
-input {
+.textBox {
   width: 60%;
   height: 50px;
   margin-left: 20%;
@@ -20,19 +34,31 @@ input {
   margin-top: 3%;
   background-color: #ffffff;
   color: #c90083;
-  border: 2px #c90083 solid;
+  border: 3px #c90083 dashed;
+  box-shadow: 0 0 0 3px #6cd69d inset;
   border-radius: 7px; }
 
 .submit {
   width: 15%;
   font-size: 20px;
-  margin-left: 65%; }
+  margin-left: 43%;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  color: grey;
+  background-color: #ffffff;
+  border: 2px #c90083 solid;
+  border-radius: 5px;
+  text-align: center; }
 
-.mainArea {
+.inputArea {
   width: 70%;
   margin-left: 14%;
   margin-top: 5%;
-  height: 500px;
-  background-color: #71a71b;
+  background-color: #6cd69d;
   border: 4px #c90083 solid;
-  border-radius: 12px; }
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px #ffffff inset; }
+
+.delete {
+  float: right;
+  margin-top: 3px; }
