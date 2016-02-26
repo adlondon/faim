@@ -34,6 +34,18 @@ body {
   box-shadow: 0 0 0 3px #ffffff inset;
   border: 2px dotted #057099; }
 
+.message div {
+  width: 90%;
+  margin-left: 4%;
+  margin-top: 3%;
+  border-radius: 7px;
+  background-color: #ffffff;
+  font-size: 20px;
+  color: grey;
+  text-align: center;
+  word-wrap: break-word;
+  box-shadow: 0 0 0 3px #ffffff inset; }
+
 h1 {
   color: #057099;
   padding-left: 15%;
