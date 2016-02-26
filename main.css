@@ -81,6 +81,7 @@ i {
 
 .messageArea {
   height: 300px;
+  vertical-align: bottom;
   overflow: scroll; }
 
 p {

@@ -30,7 +30,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("autosave")) {
     field.value = sessionStorage.getItem("autosave");
   };
-  // setInterval(function(){page.getMessageData()}, 1000);
+  setInterval(function(){page.getMessageData()}, 1000);
 
 });
 
@@ -90,7 +90,7 @@ var page = {
 
   addMessageToDom: function (dataArrayObject, templateString, $target) {
       var tmpl = _.template(templateString);
-      $target.append(tmpl(dataArrayObject));
+      $target.prepend(tmpl(dataArrayObject));
   },
   addAllMessages: function (arr,$target) {
     $target.html('');
