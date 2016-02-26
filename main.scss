@@ -13,8 +13,9 @@ body {
   font-size: 20px;
   color:grey;
   text-align: center;
-
+  word-wrap: break-word;
 }
+
 
 
 h1 {
@@ -27,6 +28,7 @@ h1 {
   text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff;
 
   }
+
 
 i {
   padding-right: 2%;
@@ -41,7 +43,7 @@ i {
   background-color: #ffffff;
   color: #c90083;
   border: 3px #c90083 dashed;
-  box-shadow: 0 0 0 3px #71a71b inset;
+  box-shadow: 0 0 0 3px #6cd69d inset;
   border-radius: 7px;
 }
 
@@ -64,6 +66,6 @@ i {
   margin-left: 14%;
   margin-top: 5%;
   // height: 600%;
-  background-color: #71a71b;
+  background-color: #6cd69d;
   border: 4px #c90083 solid;
   border-radius: 12px; }

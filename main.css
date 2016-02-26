@@ -10,7 +10,9 @@ body {
   background-color: #ffffff;
   font-size: 20px;
   color: grey;
-  text-align: center; }
+  text-align: center;
+  word-wrap: break-word;
+}
 
 h1 {
   color: #057099;
@@ -34,7 +36,7 @@ i {
   background-color: #ffffff;
   color: #c90083;
   border: 3px #c90083 dashed;
-  box-shadow: 0 0 0 3px #71a71b inset;
+  box-shadow: 0 0 0 3px #6cd69d inset;
   border-radius: 7px; }
 
 .submit {
@@ -53,6 +55,6 @@ i {
   width: 70%;
   margin-left: 14%;
   margin-top: 5%;
-  background-color: #71a71b;
+  background-color: #6cd69d;
   border: 4px #c90083 solid;
   border-radius: 12px; }
