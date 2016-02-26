@@ -3,11 +3,12 @@
 
 var templates = {
   messages: [
-    "<div data-postid='<%= _id %>'",
+    "<div data-postid='<%= _id %>'>",
       "<div class='userNameDisplay'><%= userName %></div>",
        "<div class= 'message'> <%= content %> </div>",
+       "<% if (obj.userName === userNameInput) {%>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
-       "</div>",
+      "<% } %>",
     "</div>"
   ].join("")
 };
@@ -27,7 +28,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("autosave")) {
     field.value = sessionStorage.getItem("autosave");
   };
-  setInterval(function(){page.getMessageData()}, 1000);
+  // setInterval(function(){page.getMessageData()}, 1000);
 
 });
 
@@ -44,7 +45,7 @@ var page = {
   },
   initEvents: function() {
     $('form').on('submit', page.submitForm);
-    $('.delete').on('click', page.deletePostFromDom)
+    $('body').on('click','.delete', page.deletePostFromDom)
   },
 
 
@@ -70,6 +71,7 @@ var page = {
     })
   },
   deletePost: function (postId) {
+    console.log("this is the post id: ", postId);
    $.ajax({
      url: page.url + '/' + postId,
      method: 'DELETE',
@@ -79,7 +81,8 @@ var page = {
    });
  },
  deletePostFromDom: function (event) {
-  var postId = $(this).closest('div').data('postid');
+  var postId = $(this).parent().data('postid');
+
   page.deletePost(postId);
 },
 
