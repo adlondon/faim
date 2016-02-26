@@ -1,26 +1,36 @@
+
+
+
 var templates = {
   messages: [
-    "<div>",
+     "<div class='messagePost'>",
+      "<div class='userNameDisplay'><%= userName %></div>",
        "<%= content %>",
-      "<input type='button' name='delete' value='delete!'>",
-       "</div>"
+      "<input class='deletePost' type='button' value='delete''>",
+     "</div>"
   ].join("")
-}
+};
 
+var userNameInput = prompt("Enter Username");
+sessionStorage.setItem('userName', userNameInput);
 
 var messageData = [
 {
   content: "hello",
-  userName: "andrew"
+  userName: "elizabeth"
  }
 ]
 
 $(document).ready(function () {
   page.init();
+  if (sessionStorage.getItem("autosave")) {
+    field.value = sessionStorage.getItem("autosave");
+  };
+
 });
 
 var page = {
-  // url: 'http://tiny-tiny.herokuapp.com/collections/faim',
+  url: 'http://tiny-tiny.herokuapp.com/collections/faim',
   init: function() {
 
     page.initStyling();
@@ -38,23 +48,38 @@ var page = {
     return messageData;
   },
   addMessageData: function (newMessage) {
-    messageData.push(newMessage)
+    $.ajax({
+      url: page.url,
+      method: "POST",
+      data: newMessage,
+      success: function (response) {
+          console.log(response);
+          page.addMessageToDom(response, templates.messages, $('.messageArea'))
+      }
+    })
+
+
+
+
+    // messageData.push(newMessage)
   },
-  addMessageToDom: function (dataArray, templateString, $target) {
-    console.log("this is data array", dataArray)
+  addMessageToDom: function (dataArrayObject, templateString, $target) {
+    console.log("this is data array object", dataArrayObject)
     var tmpl = _.template(templateString);
-    $target.append(tmpl(dataArray));
+    $target.append(tmpl(dataArrayObject));
 
   },
   addAllMessages: function (arr,$target) {
-    $target.html("");
+    $target.htmlf
     _.each(arr, function (el) {
       page.addMessageToDom(el,templates.messages,$target);
     });
   },
   getMessageFromDom: function (messageText) {
+    var username = sessionStorage.getItem('userNameInput');
     return {
       content: messageText,
+      userName: userNameInput,
     };
   },
   submitForm: function (el) {
@@ -64,6 +89,11 @@ var page = {
     page.addMessageData(newMessage);
     $('.textBox').val('');
     console.log(messageData);
-    page.addAllMessages(messageData, $('.messageArea'));
+    // page.addAllMessages(messageData, $('.messageArea'));
+  },
+  deleteToggle: function (el) {
+    if ($(".deletePost").contains(userNameInput)) {
+      delete el;
+    };
   }
 }
