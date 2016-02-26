@@ -1,5 +1,7 @@
 body {
-  background-color: #057099; }
+  background-color: #057099;
+  padding-bottom: 10%;
+ }
 
 .messageArea {
   width: 70%;
@@ -8,11 +10,11 @@ body {
   border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
-  word-wrap: break-word;
+  word-wrap: normal;
   box-shadow: 0 0 0 3px #ffffff inset;
   padding-top: 7px;
   padding-left: 4px;
-  // maybe here
+
 }
 
 
@@ -36,7 +38,7 @@ h1 {
   padding-left: 15%;
   font-size: 45px;
   margin-bottom: 0%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 9%;
   text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
@@ -51,7 +53,7 @@ i {
 .delete{
   width:10%;
   float: right;
-  margin-top: 4px;
+  margin-top: -80px;
   display: inline-block;
 }
 
@@ -59,12 +61,9 @@ i {
   display:inline-block;
   width:100%;
   border-top: 2px dotted #057099;
-  // height: 10px;
-
-
 }
 
-// this is fine
+
 .textBox {
   width: 60%;
   margin-left: 20%;
@@ -76,13 +75,13 @@ i {
   box-shadow: 0 0 0 3px #6cd69d inset;
   border-radius: 7px; }
 
-// this is fine
+
 .submit {
   width: 15%;
   font-size: 20px;
   margin-left: 43%;
   margin-top: 1%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   color: grey;
   background-color: #ffffff;
   border: 2px #c90083 solid;
@@ -90,7 +89,7 @@ i {
   text-align: center; }
 
 
-// this is fine
+
 .inputArea {
   width: 70%;
   margin-left: 14%;
@@ -99,9 +98,7 @@ i {
   border: 4px #c90083 solid;
   border-radius: 12px;
   box-shadow: 0 0 0 3px #ffffff inset;
-  // height: 400px;
-  // overflow: scroll;
-  // maybe here
+
 }
 
 
@@ -110,7 +107,19 @@ i {
   height: 300px;
   overflow: scroll;
 }
+.userNameDisplay{
+  border: #c90083 2px dotted;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 7%;
+  padding: 1%;
 
-p{
+}
+.message{
   color:#6cd69d;
+
+
+}
+span{
+  display:inline-block;
 }

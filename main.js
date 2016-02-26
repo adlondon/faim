@@ -4,8 +4,9 @@
 var templates = {
   messages: [
     "<div class= 'eachMessage' data-postid='<%= _id %>'",
-      "<p class='userNameDisplay'><%= userName %></p>",
-        "<p class= 'message'> <%= content %> </p>",
+
+      "<p> <span class='userNameDisplay'> <%= userName %></span>",
+       "<span class= 'message'> <%= content %> </span></p>",
        "<% if (obj.userName === userNameInput) {%>",
       "<input type='button' name='delete' value='delete!' class = 'delete'>",
       "<% } %>",
@@ -47,7 +48,8 @@ var page = {
   },
   initEvents: function() {
     $('form').on('submit', page.submitForm);
-    $('body').on('click','.delete', page.deletePostFromDom)
+
+    $('body').on('click', '.delete', page.deletePostFromDom)
   },
 
 
@@ -91,6 +93,9 @@ var page = {
   addMessageToDom: function (dataArrayObject, templateString, $target) {
       var tmpl = _.template(templateString);
       $target.prepend(tmpl(dataArrayObject));
+
+      $('.messageArea').scrollTop($('.messageArea')[0].scrollHeight);
+
   },
   addAllMessages: function (arr,$target) {
     $target.html('');

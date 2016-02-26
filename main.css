@@ -1,5 +1,6 @@
 body {
-  background-color: #057099; }
+  background-color: #057099;
+  padding-bottom: 10%; }
 
 .messageArea {
   width: 70%;
@@ -8,7 +9,7 @@ body {
   border-radius: 7px;
   background-color: #ffffff;
   font-size: 20px;
-  word-wrap: break-word;
+  word-wrap: normal;
   box-shadow: 0 0 0 3px #ffffff inset;
   padding-top: 7px;
   padding-left: 4px; }
@@ -28,7 +29,7 @@ h1 {
   padding-left: 15%;
   font-size: 45px;
   margin-bottom: 0%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 9%;
   text-shadow: -1px 0 #497308, 0 1px #497308, 1px 0 #ffffff, 0 -1px #ffffff; }
 
@@ -39,7 +40,7 @@ i {
 .delete {
   width: 10%;
   float: right;
-  margin-top: 4px;
+  margin-top: -80px;
   display: inline-block; }
 
 .eachMessage {
@@ -63,7 +64,7 @@ i {
   font-size: 20px;
   margin-left: 43%;
   margin-top: 1%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   color: grey;
   background-color: #ffffff;
   border: 2px #c90083 solid;
@@ -81,8 +82,17 @@ i {
 
 .messageArea {
   height: 300px;
-  vertical-align: bottom;
   overflow: scroll; }
 
-p {
+.userNameDisplay {
+  border: #c90083 2px dotted;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 7%;
+  padding: 1%; }
+
+.message {
   color: #6cd69d; }
+
+span {
+  display: inline-block; }
