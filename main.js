@@ -4,43 +4,39 @@
 var templates = {
   messages: [
     "<div class= 'eachMessage' data-postid='<%= _id %>'",
-
-      "<p> <span class='userNameDisplay'> <%= userName %></span>",
-       "<span class= 'message'> <%= content %> </span></p>",
-       "<% if (obj.userName === userNameInput) {%>",
-      "<input type='button' name='delete' value='delete!' class = 'delete'>",
+      "<% if (obj.userName === userNameInput) {%>",
+      "<p> <span class='userNameDisplayRed'> <%= userName %>:</span>",
+      "<% } else { %>",
+      "<p> <span class='userNameDisplayBlue'> <%= userName %>:</span>",
       "<% } %>",
+       "<span class= 'message'> <%= content %> </span>",
+       "<% if (obj.userName === userNameInput) {%>",
+      "<i class='delete fa fa-trash' aria-hidden='true'></i>",
+      "<% } %>",
+      "</p>",
     "</div>"
   ].join("")
 };
 
-
-
 var userNameInput = prompt("Enter Username");
 sessionStorage.setItem('userName', userNameInput);
 
-var messageData = [
-// {
-//   content: "hello",
-//   userName: "elizabeth"
-//  }
-]
+var messageData = [];
 
 $(document).ready(function () {
   page.init();
   if (sessionStorage.getItem("autosave")) {
     field.value = sessionStorage.getItem("autosave");
   };
-  setInterval(function(){page.getMessageData()}, 1000);
-
+  // setInterval(function(){page.getMessageData()}, 1000);
 });
 
 var page = {
-  url: 'http://tiny-tiny.herokuapp.com/collections/faims',
+  url: 'http://tiny-tiny.herokuapp.com/collections/faim9',
   init: function() {
-
     page.initStyling();
     page.initEvents();
+    page.getMessageData();
   },
   initStyling: function() {
     page.addAllMessages(messageData, $('.messageArea'));
@@ -48,7 +44,6 @@ var page = {
   },
   initEvents: function() {
     $('form').on('submit', page.submitForm);
-
     $('body').on('click', '.delete', page.deletePostFromDom)
   },
 
@@ -86,7 +81,6 @@ var page = {
  },
  deletePostFromDom: function (event) {
   var postId = $(this).parent().data('postid');
-
   page.deletePost(postId);
 },
 
