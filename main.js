@@ -28,7 +28,7 @@ $(document).ready(function () {
   if (sessionStorage.getItem("autosave")) {
     field.value = sessionStorage.getItem("autosave");
   };
-  setInterval(function(){page.getMessageData()}, 1000);
+  // setInterval(function(){page.getMessageData()}, 1000);
 });
 
 var page = {
